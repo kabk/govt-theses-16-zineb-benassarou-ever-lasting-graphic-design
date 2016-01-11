@@ -8,10 +8,6 @@
 }
 
 
-
-
-
-
 html {
   font-family: Helvetica, sans-serif;
   -webkit-text-size-adjust: 100%;
@@ -22,37 +18,9 @@ body {
   margin: 0;
 }
 
-a {
-  background: transformarent;
-}
 
-a:active,
-a:hover {
-  outline: 0;
-}
 
-p {
-  font-family: Helvetica, sans-serif;
-  display: block;
-  position: relative;
-  float: left;
-  margin-left: 0%;
-  margin-right: 5%;
-  max-width: 400px;
-}
 
-.p1{
-  width: 250px;
-  margin-left: 5%;
-}
-
-.p2{
-  width: 350px;
-}
-
-.p3{
-  margin-left: 2%;
-}
 
 img {
   border: 0;
@@ -60,45 +28,220 @@ img {
 
 
 body {
-  background-color: #ffffff;
-
+  background-color: black;
   font-size: 18px;
   line-height: 1.5;
   font-family: Helvetica, sans-serif;
 }
 
-#header {
-  max-width: 60em;
-  margin-left: auto;
-  margin-right: auto;
-  margin-left: 2.5641%;
-  margin-top: 1em;
-  margin-bottom: 2em;
-}
-#header:after {
-  display: block;
-  clear: both;
+#screen {
+  height:100%;
+  width:100%;
 }
 
 
-
-#hname {
+.header {
   display: block;
-  position: relative;
+  background-color:#ffffff; 
   float: left;
-  font-size: 1 em;
-  margin-left: 0%;
-  color: rgb(0,0,0);
+  width: 400px;
+  height: 600px; 
+  margin-left: 8%;
+  margin-top: 18px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
 }
 
-#htitle {
+.page1 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 10%;
+  margin-top: 18px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page2 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 0%;
+  margin-top: 18px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page3 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 10%;
+  margin-top: 18px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page4 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 0%;
+  margin-top: 18px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page5 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 10%;
+  margin-top: 18px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page6 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 0%;
+  margin-top: 18px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page7 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 8%;
+  margin-top: 72px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page8 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 0%;
+  margin-top: 72px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page9 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 10%;
+  margin-top: 72px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page10 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 0%;
+  margin-top: 72px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page11 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 10%;
+  margin-top: 72px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.page12 {
+  display: block;
+  background-color:#ffffff; 
+  float: left;
+  width: 400px;
+  height: 600px; 
+  margin-left: 0%;
+  margin-top: 72px;
+  padding: 20px;
+  border-style: solid;
+  border-width: 1px;
+}
+
+
+
+
+
+
+#page {
+  display: block;
+  position: absolute;
+  float: left;
+  margin-left: -1.5%;
+  margin-top: -20px;
+}
+
+
+
+
+#quotehidden{
   display: block;
   position: relative;
-  width: 100%;
-  font-size: 7em;
-  text-align: center;
-  margin-left: 40%;
+  margin-left: -50%;
+  margin-top: -10%;
 }
+
+#quote{
+  display: block;
+  position: relative;
+  width:40%;
+  font-size: 12px;
+  margin-left: 25%;
+  margin-top: 15%;
+  line-height: 1;
+}
+
 
 span.stretch {
     display:inline-block;
@@ -109,25 +252,7 @@ span.stretch {
     transform:scale(1,2); /* W3C */
 }
 
-#subtitle{
-  display: block;
-  position: relative;
-  width:100%;
-  font-size: 1.7em;
-  margin-left: 58%;
-  margin-top: 4%;
-  line-height: 1;
-}
 
-#subtitle2 {
-  display: block;
-  position: relative;
-  clear: both;
-  font-size: 2em;
-  margin-left: 5%;
-  padding-top: 10px;
-  width:100%;
-  line-height: 1em;
-}
+
 
 
