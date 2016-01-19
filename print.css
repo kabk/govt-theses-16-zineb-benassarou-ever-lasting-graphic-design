@@ -1,0 +1,12 @@
+.navbar {
+  display: none;
+}
+
+@page {
+  margin : 0.2cm 0.2cm  0.2cm 0.2cm;
+} 
+
+img {
+  width : 18cm;
+  height : 26.7cm;
+}

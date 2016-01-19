@@ -19,6 +19,10 @@ body {
 }
 
 
+#book {
+ width: 450%;
+ overflow: scroll;
+}
 
 .button {
     background-color: transparent; 
@@ -68,9 +72,11 @@ body {
   width:100%;
 }
 
+  #arrow {
+    display: none;
+  }
 
-#header, 
-.double {
+.page {
 position:relative;
   display: block;
   /*background-color:#ffffff;*/ 
@@ -81,26 +87,30 @@ position:relative;
   border-width: 1px;*/
 
   line-height: 0;
+  width:22%;
 }
 
-#header {
-  margin-left: 8%;
-  margin-right: 4%;
+.single,
+.double {
+  position:relative;
+  border:solid 1px black;
   margin-top: 1%;
-  width: 8%;
+}
+
+.single {
+  width:36%;
+  margin-left: 32%;
+  margin-right: 32%;
 }
 
 .double {
-  width:16%;
-  padding-left: 3%;
-  padding-right: 3%;
-  padding-top: 1%;
-border:solid 1px black;
+  width:72%;
+  margin-left: 14%;
+  margin-right: 14%;
 }
 
-.left,
-.right {
-width:50%;
+.double img {
+  width:50%;
 }
 
 .link {
@@ -171,7 +181,31 @@ border:solid 1px blue;
 }
 */
 
+@media (max-width: 720px){
+  #zigzag {
+    display: none;
+  }
 
+  #arrow {
+    display: block;
+  }
 
+  #book {
+    width: 100%;
+  }
 
+  .page {
+    width:100%;
+  }
 
+  .single {
+    margin: 2% 25% 0% 25%;
+    width:50%;
+  }
+
+  .double {
+    margin: 2% 0% 0% 0%;
+    width:100%;
+  }
+  
+}
