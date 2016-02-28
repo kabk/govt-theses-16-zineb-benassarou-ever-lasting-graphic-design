@@ -3,10 +3,208 @@
 }
 
 @page {
-  margin : 0.2cm 0.2cm  0.2cm 0.2cm;
+  /*margin : 0.2cm 0.2cm 0.2cm 0.2cm;*/
+  margin : 0cm 0cm 0cm 0cm;
 } 
 
-img {
-  width : 18cm;
-  height : 26.7cm;
+body {
+  width: 21cm;
+  height: 29.7cm;
+  font-size: 17pt;
+  line-height: 1.04;
+  font-family: Times, serif;
 }
+
+img {
+margin:0;
+padding:0;
+  display: block;
+  /*position: absolute;*/
+  width : 21cm;
+  height : 29.7cm;
+  /*top:0; left:0;*/
+}
+
+h1 {
+  display: block;
+  position: absolute;
+  transform-origin: top left;
+  transform: rotate(270deg) translate(-100%);
+  font-size: 668%;
+  font-weight:bold;
+  margin: 0;
+  text-shadow: 1px 1px 0.1em rgba(0,0,0,0.5);
+  text-align:right;
+  top:2.7%;
+  left:5.7%;
+width:25cm;
+}
+
+h2 {
+  font-weight:bold;
+  font-family: Arial, sans-serif;
+  text-shadow: 1px 1px 0.1em rgba(0,0,0,0.5);
+  font-size:120%;
+  margin: -0.3em 0 0 -0.1em;
+  float:left;
+  line-height:1.255;
+}
+a {
+  color:black;
+  text-decoration: none;
+}
+
+
+#cover {
+  display: block;
+  position: absolute;
+  /*width:100%;*/
+  top:3%;
+  right:4%;
+  font-size:528%;
+  font-weight:bold;
+  font-family: Arial, sans-serif;
+  text-shadow: 1px 1px 0.1em rgba(0,0,0,0.5);
+  transform-origin: top right;
+  transform: rotate(90deg) translate(100%);;
+}
+
+.number {
+  position: absolute;
+  bottom: 1%;
+  width: 100%;
+  text-align:center;
+}
+
+.bottom {
+  display: block;
+  position: absolute;
+  bottom: 4%;
+  left:0;
+  right:0;
+  width:100%;
+  text-align:center;
+  font-size:120%;
+  line-height:1.3;
+}
+
+#p3 {
+  font-size:220%;
+  font-weight:bold;
+  font-family: Arial, sans-serif;
+  text-shadow: 1px 1px 0.1em rgba(0,0,0,0.5);
+  margin-bottom:1.45%;
+}
+
+#p7 > ul {
+  margin-top:45%;
+}
+
+#p7 > ul li {
+  font-size: 105%;
+  line-height:1.33;
+  margin-left:22%;
+}
+
+#p7 > ul li ul {
+  margin:0;
+  padding:0 0 0 1.7em;
+}
+
+#p7 > ul li ul li {
+  margin:0;
+  padding:0;
+}
+
+li{
+  list-style-type: none;
+}
+
+#p7 > ul span {
+  float:right;
+  margin-right:3%;
+  font-family: Arial, sans-serif;
+  font-weight:bold;
+  text-shadow: 1px 1px 0.1em black;
+}
+
+.page {
+  /*position: relative;*/
+}
+
+.single,
+.left,
+.right {
+  display: block;
+  width: 21cm;
+  height: 29.7cm;
+  page-break-after: always;
+  position: relative;
+border: solid 1px red;
+}
+
+.right .texte {
+  padding : 4.5% 5.5% 4.5% 7.5%;
+}
+
+.left .texte {
+  padding : 4.5% 7.5% 4.5% 5.8%;
+}
+
+.texte p {
+  text-align:justify;
+}
+
+.right .texte p {
+  margin: 0 0 0 25%;
+  word-spacing:-0.1em;
+  /*padding : 0% 6% 0% 3.9%;*/
+}
+
+.left .texte p {
+  margin: 0 25% 0 0;
+  word-spacing:-0.1em;
+  /*padding : 0% 3.9% 0% 6%;*/
+}
+
+.left .notes,
+.right .notes {
+  display: block;
+  position: absolute;
+width:22cm;
+border:solid 1px blue;
+  bottom:4.8%;
+font-size:83.35%;
+}
+
+.left .notes {
+  right:6.3%;
+  transform-origin: bottom right;
+  transform: rotate(270deg) translate(100%);;
+}
+
+.right .notes {
+  left:7.8%;
+  transform-origin: bottom left;
+  transform: rotate(270deg) translate(0,100%);;
+}
+
+.notes .note {
+  padding: 0;
+}
+
+.notes .note sup {
+  float:left;
+}
+
+.notes .note p {
+  margin: 0 0 0 1.3em;
+  padding: 0;
+/*min-width:0;*/
+/*max-width:auto;*/
+}
+
+.note {
+  /*width:30vw;*/
+}
+
