@@ -60,6 +60,9 @@ body {
 
 .texte sup {
   line-height:0;
+  font-size: 72%;
+  color: blue;
+  font-family: arial, sans-serif;
 }
 
 .navbar {
@@ -81,7 +84,7 @@ body {
     display: none;
   }
 
-  #comment2 {
+   #comment2 {
     display: none;
   }
 
@@ -169,11 +172,21 @@ border:solid 1px blue;
 
 .page a {
 color: black;
-}
-
-.page a:hover {
 text-decoration: underline;
 }
+
+#cover a{
+color: black;
+text-decoration: none;
+}
+
+#cover a:hover{
+text-decoration: underline;
+}
+
+/*.page a:hover {
+text-decoration: underline;
+}*/
 
 #cover {
   display: block;
@@ -191,6 +204,7 @@ text-decoration: underline;
 }
 
 .number {
+  display:block;
   position: absolute;
   bottom: 1%;
   width: 100%;
@@ -463,17 +477,66 @@ h2 {
   letter-spacing:-0.02em;
 }
 
-h3 {
+/*h3 {
   font-weight:bold;
   font-family: Arial, sans-serif;
   text-shadow: 1px 1px 0.1em rgba(0,0,0,0.5);
-  /*font-size:1.3vw;*/
   font-size:120%;
   margin: 1em 1em 1em 1.6em;
   float:left;
   line-height:1.255;
 }
+*/
+.references h3, 
+.references p,
+.colophon dl,
+.colophon p {
+  font-size:83.35%;
+}
 
+.left .references h3{
+  margin-left:2.4em;
+  margin-right:11.8em;
+  margin-top:1em;
+  margin-bottom:0;
+  text-indent:-0.5em;
+}
+.left .references p{
+  margin-top:0;
+  margin-right:11.8em;
+  margin-left:3.7em;
+  text-indent:-1.7em;
+  margin-bottom:0;
+} 
+
+.right .references h3{
+  margin-top:1em;
+  margin-bottom:0;
+  margin-left:12.0em;
+  margin-right:1.0em;
+  text-indent:-0.5em;
+}
+
+.right .references p{
+  margin-left:13.3em;
+  text-indent:-1.7em;
+  margin-right:1.0em;
+  margin-bottom:0;
+  margin-top:0;
+}
+ 
+.references h2,
+.colophon h2 {
+  float:none;
+  margin: 1em 1em 1.6em 1.6em;
+}
+
+.colophon dl {
+  margin:1em 12em 0 2.0em; 
+}
+.colophon p {
+  margin:1em 12em 0 2.0em; 
+}
 .right .texte p {
   margin: 0 0 0 25%;
   word-spacing:-0.1em;
@@ -490,6 +553,23 @@ h3 {
   text-indent: 1.1em;
 }
 
+.right .texte2 p {
+  /*margin: 1em 1em 1em 1.6em;*/
+  position:relative;
+  margin: 0 0 0 25%;
+  word-spacing:-0.1em;
+  /*padding : 0% 6% 0% 3.9%;*/
+}
+
+.left .texte2 p {
+  margin: 0 25% 0 0;
+  word-spacing:-0.1em;
+  /*padding : 0% 3.9% 0% 6%;*/
+}
+
+.texte2 p + p {
+  text-indent: -1.1em;
+}
 
 /*
 #hidden1 {

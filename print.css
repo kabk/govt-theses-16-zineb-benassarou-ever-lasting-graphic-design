@@ -10,8 +10,8 @@
 body {
   width: 21cm;
   height: 29.7cm;
-  font-size: 17pt;
-  line-height: 1.04;
+  font-size: 16.8pt;
+  line-height: 1;
   font-family: Times, serif;
 }
 
@@ -30,7 +30,7 @@ h1 {
   position: absolute;
   transform-origin: top left;
   transform: rotate(270deg) translate(-100%);
-  font-size: 668%;
+  font-size: 600%;
   font-weight:bold;
   margin: 0;
   text-shadow: 1px 1px 0.1em rgba(0,0,0,0.5);
