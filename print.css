@@ -3,15 +3,15 @@
 }
 
 @page {
-  /*margin : 0.2cm 0.2cm 0.2cm 0.2cm;*/
-  margin : 0cm 0cm 0cm 0cm;
+  margin : 0.2cm 0.2cm 0.2cm 0.2cm;
+  /*margin : 0cm 0cm 0cm 0cm;*/
 } 
 
 body {
   width: 21cm;
   height: 29.7cm;
   font-size: 16.8pt;
-  line-height: 1;
+  line-height: 1.04;
   font-family: Times, serif;
 }
 
@@ -70,6 +70,7 @@ a {
 }
 
 .number {
+  /*display: block;*/
   position: absolute;
   bottom: 1%;
   width: 100%;
@@ -77,6 +78,18 @@ a {
 }
 
 .bottom {
+  /*display: block;*/
+  position: absolute;
+  bottom: 4%;
+  left:0;
+  right:0;
+  /*width:100%;*/
+  text-align:center;
+  font-size:120%;
+  line-height:1.3;
+}
+
+.backcover {
   display: block;
   position: absolute;
   bottom: 4%;
@@ -84,7 +97,11 @@ a {
   right:0;
   width:100%;
   text-align:center;
-  font-size:120%;
+  font-weight:bold;
+  font-family: Times, serif;
+  text-shadow: 1px 1px 0.1em rgba(0,0,0,0.5);
+  /*font-size:1.3vw;*/
+  font-size:200%;
   line-height:1.3;
 }
 
@@ -140,7 +157,7 @@ li{
   height: 29.7cm;
   page-break-after: always;
   position: relative;
-border: solid 1px red;
+border: solid 1px white;
 }
 
 .right .texte {
@@ -157,13 +174,13 @@ border: solid 1px red;
 
 .right .texte p {
   margin: 0 0 0 25%;
-  word-spacing:-0.1em;
+  word-spacing:-0.06em;
   /*padding : 0% 6% 0% 3.9%;*/
 }
 
 .left .texte p {
   margin: 0 25% 0 0;
-  word-spacing:-0.1em;
+  word-spacing:-0.06em;
   /*padding : 0% 3.9% 0% 6%;*/
 }
 
@@ -172,9 +189,19 @@ border: solid 1px red;
   display: block;
   position: absolute;
 width:22cm;
-border:solid 1px blue;
+/*border:solid 1px blue;*/
   bottom:4.8%;
 font-size:83.35%;
+}
+
+.texte p + p {
+  text-indent: 1.1em;
+}
+
+.texte sup {  
+  line-height:0;
+  font-size: 72%;
+  font-family: arial, sans-serif;
 }
 
 .left .notes {
@@ -206,5 +233,129 @@ font-size:83.35%;
 
 .note {
   /*width:30vw;*/
+}
+
+/*
+.right .references {
+  padding : 4.5% 5.5% 4.5% 7.5%;
+}
+
+.left .references {
+  padding : 4.5% 7.5% 4.5% 5.8%;
+}
+
+.references h3, 
+.references p,
+.colophon dl,
+.colophon p {
+  font-size:83.35%;
+}
+
+.left .references h3{
+  margin-left:2.4em;
+  margin-right:11.8em;
+  margin-top:1em;
+  margin-bottom:0;
+  text-indent:-0.5em;
+}
+.left .references p{
+  margin-top:0;
+  margin-right:11.8em;
+  margin-left:3.7em;
+  text-indent:-1.7em;
+  margin-bottom: 0.04em;
+} 
+
+.right .references h3{
+clear:both;
+  margin-top:1em;
+  margin-bottom:0;
+  margin-left:12.0em;
+  margin-right:1.0em;
+  text-indent:-0.5em;
+}
+
+.right .references p{
+  margin-left:13.3em;
+  text-indent:-1.7em;
+  margin-right:1.0em;
+  margin-bottom:0.04em;
+  margin-top:0;
+}
+ 
+.references h2,
+.colophon h2 {
+  float:left;
+  margin: 1em 1em 1.6em 1.6em;
+}
+
+.colophon dl {
+clear:both;
+  margin:1em 12em 0 2.0em; 
+}
+.colophon p {
+  margin:1em 12em 0 2.0em; 
+}
+*/
+
+/** REFERENCES + COLOPHON */
+
+.colophon,
+.references {
+  line-height:1.1;
+letter-spacing: -0.02em;
+word-spacing: -0.03em;
+}
+
+.colophon {
+  line-height: 1.14;
+}
+.left .colophon,
+.left .references {
+  /*padding : 4.5% 7.5% 4.5% 5.8%;*/
+  padding : 4.5% 29.5% 4.5% 5.8%;
+}
+.right .references {
+  /*padding : 4.5% 5.5% 4.5% 7.5%;*/
+  padding : 4.5% 5.5% 4.5% 29.5%;
+}
+
+.references h3, 
+.references p,
+.colophon dl,
+.colophon p {
+  font-size:83.35%;
+}
+
+.references h3{
+  margin:1.2em 0 0 0;
+}
+
+.references p{
+  text-align:justify;
+  text-indent:-5%;
+  margin:0 0 0 5%;
+  hyphens: manual;
+} 
+ 
+.references h2,
+.colophon h2 {
+float:none;
+margin-bottom: 1.6em;
+  /*margin: 1em 1em 1.6em 1.6em;*/
+}
+
+.colophon dl {
+  margin:0;
+}
+.colophon dd {
+  margin:0 0 0 5%;
+}
+.colophon dd + dt {
+  margin-top:1em;
+}
+
+.colophon p {
+  margin:0;
 }
 

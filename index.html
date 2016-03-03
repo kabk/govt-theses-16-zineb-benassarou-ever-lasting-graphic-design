@@ -31,13 +31,14 @@
   <script src="jquery-ui.min.js"></script>
 -->
 
+  <!--link rel="stylesheet" media="all" href="reset.css"-->
   <link rel="stylesheet" media="screen" href="screen.css">
   <link rel="stylesheet" media="print" href="print.css">
 </head>
 <body>
 
   <script>
-var SELECTOR = "#cover a, .texte a, .bottom a, .number a";
+var SELECTOR = "#cover a, .texte a, .bottom a, .number a, .navbar a";
 function normal () {
   // Add smooth scrolling to all links
   $(SELECTOR).click(function (e) {
@@ -68,25 +69,28 @@ function overview () {
   //console.log (w, h);
   $('body').css({'width': 0.25*w, 'height': 0.25*h});
   //console.log ($('body').width(), $('body').height());
-
+  
   $('.single').css({'cursor': 'pointer'});
   $('.double').css({'cursor': 'pointer'});
   $(SELECTOR).off('click');
   $(SELECTOR).click (function (e) {e.preventDefault();});
-
+  $('#overview').css('visibility','hidden');
   $('.page').click(function (e) {
     e.stopPropagation();
 
     $('#book').css({'transform-origin': '0 0', 'transform': 'scale(1)'});
     var w = $('#book').width()+'px', h = $('#book').height()+'px';
     //console.log (w, h);
-    $('body').css({'width': w, 'height': h});
+    //$('body').css({'width': w, 'height': h});
+    $('body').css({'width': 'auto', 'height': 'auto'});
     //console.log ($('body').width(), $('body').height());
 
     $('.page').off('click');
 
     $('.single').css({'cursor': 'auto'});
     $('.double').css({'cursor': 'auto'});
+    //$('#overview').show();
+    $('#overview').css('visibility','visible');
     var o = $(this).offset();
     window.scrollTo(o.left,o.top);
     normal ();
@@ -98,14 +102,19 @@ $(document).ready(normal);
 
 <div class="navbar">
     <ul>
-    <li><input type="button" class="button" onClick="overview ()" value="Overview"></li>
+    <li><input type="button" class="button" onClick="overview ()" value="Overview" id="overview"></li>
     <li><input type="button" class="button" onClick="window.print ()" value="Print"></li>
-    <li><input type="button" class="button" onClick="#hidden3" value="Contents"></li>
+    <!--li><input type="button" class="button" onClick="window.location='#hidden3'" value="Contents"></li-->
+    <li><a href="#hidden3">Contents</a></li>
     <br>
     <div id="comment1"><div class="texteblue">To download a .pdf use the print tool of the browser.</div></div>
-    <div id="comment2"><div class="texteblue">For a more comfortable reading experience, visit this page on personal computers or tablets.</div></div>
     <br>
-    <div id="zigzag"><img src="images/direction1.png" alt="Direction" height="70px" width="70px"></div>
+    <div id="comment1"><div class="texteblue">Best viewed in Firefox &amp; Chrome</div></div>
+    <div id="comment2"><div class="texteblue">For a more comfortable reading experience, visit this page on personal computer or tablet.</div></div>
+    <br>
+    <div id="zigzag"><div class="direction">Reading direction</div>
+    <img src="images/direction1.png" alt="Direction" height="70px" width="70px" class="image">
+    </div>
     <div id="arrow"><img src="images/direction2.png" alt="Direction" height="70px" width="30px"></div>
     </ul> 
 </div>  
@@ -139,7 +148,7 @@ $(document).ready(normal);
   --><div class="left"><!--
      --><img src="images/designweb6.jpg"><!--
      --><sup class="ref" style="position:absolute;top:19%;left:43.5%;width:16px;height:16px;border:solid 0px black;"></sup><!--
-     --><div class="notes"><div class="note"><sup>*</sup> &ldquo;But these stories were asleep in newspapers of thirty years ago and no one knew them anymore.&rdquo;Proust, M. (1927) <i>À la recherche du temps perdu: Le Temps retrouvé</i>, Paris: Grasset / Gallimard.</div></div></div><!--
+     --><div class="notes"><div class="note"><sup>*</sup>&nbsp;&ldquo;But these stories were asleep in newspapers of thirty years ago and no one knew them anymore.&rdquo;Proust, M. (1927) <i>À la recherche du temps perdu: Le Temps retrouvé</i>, Paris: Grasset / Gallimard.</div></div></div><!--
   --><!--div class="right" style="background-image:url(images/designweb7.jpg);"--><!--
   --><div class="right"><div class="number"></div><!--
      --><div id="p7" class="texte"><!--
@@ -180,8 +189,8 @@ $(document).ready(normal);
         --><p>With this thesis I want to question the possibility of creating a graphic design that would last forever. A graphic design, using typography, images or new media, that would help to preserve knowledge and information, the History of Mankind forever (or almost). To try and tackle this issue, I intend to find out how it would be possible to preserve this very thesis.</p><!--
         --><p>That way I will investigate on <a href="#hidden5">the history of printing</a>, <a href="#hidden7">its conservation</a> and <a href="#hidden9">its so-called &ldquo;death&rdquo;</a>, on the one hand. On the other hand, I will focus on <a href="#hidden11">the chronology of our digital era</a>, <a href="#hidden13">the different aspects of digital conservation</a> and problems such as <a href="#hidden15">the data pollution and E-Waste</a>. Eventually, I will try and figure out the several issues that can be connected with the very idea of an everlasting graphic design, focusing on the matters of <a href="#hidden17">updates</a> and <a href="#hidden19">trends.</a></p></div><!--
      --><div class="notes"><!--
-        --><div class="note"><sup>1</sup> Drucker, J. and McVarish, E. (2009) <i>Graphic Design History: A critical Guide</i>, Pearson Education.</div><!--
-        --><div class="note"><sup>2</sup> Lantenois, A. DDDAAA: Quels outils critiques pour comprendre le design graphique? March 28-29, 2007.</div><!--
+        --><div class="note"><sup>1</sup>&nbsp;Drucker, J. and McVarish, E. (2009) <i>Graphic Design History: A critical Guide</i>, Pearson Education.</div><!--
+        --><div class="note"><sup>2</sup>&nbsp;Lantenois, A. DDDAAA: Quels outils critiques pour comprendre le design graphique? March 28-29, 2007.</div><!--
         --></div></div></div></div>
 
   <div class="page" id="hidden5"><div class="double"><!--
@@ -199,8 +208,8 @@ $(document).ready(normal);
         --><p>Later in the 15th century, technical advances were made in Germany which rapidly transform printing from a tiny industry to a milestone of western civilization. By then, the name of Gutenberg first appeared in connection with printing. In Mainz, Gutenberg’s great achievement in the story of printing had several components. One of them was his development of the printing press, capable of applying a rapid but steady downward pressure. The concept of the press was not new but existing presses exerted slow pressure —uneconomical in printing. His first publication was a full-length Bible in Latin, printed to the standards of the best black-letter manuscripts. The new technology spread rapidly. Gutenberg’s method was ideal for combining text and illustration on the same page. Movable type could be set in any shape round a wood block. The raised surfaces of both type and image would receive the ink together and could transfer it to the paper at a single impression.</p><!--
         --><p>The profusion of presses in Europe by the early 16th century meant that the machinery was in place for a different and entirely new form of production —the rapid printing of pamphlets, or even single sheets, which could<p></div><!--
      --><div class="notes"><!--
-        --><div class="note"><sup>3</sup> &ldquo;A book is a number of printed or written pages bound together along one edge and usually protected by thick paper or stiff pasteboard covers. It is also defined as a written work or composition, such as a novel, technical manual, or dictionary.&rdquo; No author, &ldquo;book&rdquo;, <a href="http://www.thefreedictionary.com/book" target="_blank">http://www.thefreedictionary.com/book</a>, consulted on December 10, 2015.</div><!--
-        --><div class="note"><sup>4</sup> No author, &ldquo;The History of Printing&rdquo;,<br><a href="http://www.historyworld.net/wrldhis/PlainTextHistories.asp?historyid=ab78" target="_blank">http://www.historyworld.net/wrldhis/PlainTextHistories.asp?historyid=ab78</a>, consulted on September 5, 2015</div><!--
+        --><div class="note"><sup>3</sup>&nbsp;&ldquo;A book is a number of printed or written pages bound together along one edge and usually protected by thick paper or stiff pasteboard covers. It is also defined as a written work or composition, such as a novel, technical manual, or dictionary.&rdquo; No author, &ldquo;book&rdquo;, <a href="http://www.thefreedictionary.com/book" target="_blank">http://www.thefreedictionary.com/book</a>, consulted on December 10, 2015.</div><!--
+        --><div class="note"><sup>4</sup>&nbsp;No author, &ldquo;The History of Printing&rdquo;,<br><a href="http://www.historyworld.net/wrldhis/PlainTextHistories.asp?historyid=ab78" target="_blank">http://www.historyworld.net/wrldhis/PlainTextHistories.asp?historyid=ab78</a>, consulted on September 5, 2015</div><!--
      --></div></div></div></div>
 
   <div class="page" id="hidden6"><div class="double"><!--
@@ -214,8 +223,8 @@ $(document).ready(normal);
         --><p>Today, offset printing is a widely used commercial printing technique. The inked image is transferred from a plate to a rubber blanket, then to the printing surface. Also, digital printing, with laser printers, is more and more popular for commercial use because of</p><!--
         --><p>its being cheap. Nevertheless, it is important to notice that this lower cost involves a huge lack of quality (in typography and images). This being said, this lack of quality is often used by designers as a creative challenge to produce visually interesting but cheap to produce printed objects. In the same trend, another widespread <span style="word-spacing: -0.15em;">printing technique, nowadays, and striking when it comes</span></p></div><!--
      --><div class="notes"><!--
-        --><div class="note"><sup>5</sup> Benjamin, W. (1936). <i>The Work of Art at the Age of Mechanical Reproduction</i>, Penguin Books.</div><!--
-        --><div class="note"><sup>6</sup> Ibid</div><!--
+        --><div class="note"><sup>5</sup>&nbsp;Benjamin, W. (1936). <i>The Work of Art at the Age of Mechanical Reproduction</i>, Penguin Books.</div><!--
+        --><div class="note"><sup>6</sup>&nbsp;Ibid</div><!--
      --></div></div><!-- 
   --><div class="right"><div class="number"><a href="#hidden7">13 &rarr;</a></div><!--
      --><div class="texte"><!--
@@ -233,9 +242,9 @@ $(document).ready(normal);
         --><p>The conservation and restoration of books is an activity dedicated to the preservation and protection of objects of historical and personal value. Paper based items, such as books, manuscripts, maps, newspapers, posters and postcatrds present distinctive concerns when it comes to care and conservation. Unlike works of art on paper, these items are handled directly and repeatedly.<p><!--
         --><p>Books represents a huge part of our historical heritage. On its online platform, the University of Chicago, Illinoy, presents in detail a course of &ldquo;Art and Science of Book Conversation&rdquo;. There you can read that &ldquo;conservation is an essential component of preserving the library’s collections. Using current knowledge of degradation pathways as well as traditional skills, conservators prevent and stop the degradation of library collections like rare books and archival materials. Conservation treatment may include a combination of chemical treatments such as aqueous deacidification —the process of washing paper in a bath of purified water enriched with alkaline chemicals— and traditional treatments like rebinding a book with broken sewing&rdquo;<sup class="ref">9</sup>. Therefore, most countries have in there national libraries a Conservation department. Conservation of the collections in order to be communicated to present and future generations is one of the main duties of the Bibliothèque nationale de France; for this purpose, a conservation policy has been implemented and oriented to both preventive and curative. This fundamental mission was entrusted to the library by its founding decree of January 3rd, 1994: &ldquo;Collect, catalog, maintain and enhance, in all fields of knowledge, the national heritage in its custody [...] and to provide access to the collections to the largest audience.&rdquo; <span style="word-spacing: 0.43em;">Throughout its history, the library has developed</span></p></div><!--
      --><div class="notes"><!--
-        --><div class="note"><sup>7</sup> “Designing often necessitates considering the aesthetic, functional, economic and sociopolitical dimensions of both the design object and design process.” —Brinkkemper, S. (1996) “Method engineering: engineering of information systems development methods and tools”. Information and Software Technology 38, 275-280.</div><!--
-        --><div class="note"><sup>8</sup> Keith A. Smith in: Rothenberg, J. and Clay, S. (2000). <i>A Book of the Book : some works and projections about the book and writing</i>, New-York.</div><!--
-        --><div class="note"><sup>9</sup> No author, “The University of Chicago Library, Under Covers: The Art and Science of Book Conservation”,<br><a href="http://www.lib.uchicago.edu/e/webexhibits/scienceofconservation/photoreproduction.html" target="_blank">http://www.lib.uchicago.edu/e/webexhibits/scienceofconservation/photoreproduction.html</a>, consulted on September 5, 2015.</div><!--
+        --><div class="note"><sup>7</sup>&nbsp;“Designing often necessitates considering the aesthetic, functional, economic and sociopolitical dimensions of both the design object and design process.” —Brinkkemper, S. (1996) “Method engineering: engineering of information systems development methods and tools”. Information and Software Technology 38, 275-280.</div><!--
+        --><div class="note"><sup>8</sup>&nbsp;Keith A. Smith in: Rothenberg, J. and Clay, S. (2000). <i>A Book of the Book : some works and projections about the book and writing</i>, New-York.</div><!--
+        --><div class="note"><sup>9</sup>&nbsp;No author, “The University of Chicago Library, Under Covers: The Art and Science of Book Conservation”,<br><a href="http://www.lib.uchicago.edu/e/webexhibits/scienceofconservation/photoreproduction.html" target="_blank">http://www.lib.uchicago.edu/e/webexhibits/scienceofconservation/photoreproduction.html</a>, consulted on September 5, 2015.</div><!--
      --></div></div></div></div>
 
   <div class="page" id="hidden8"><div class="double"><!--
@@ -243,14 +252,14 @@ $(document).ready(normal);
      --><div class="texte"><p>techniques that are appropriated to that mission. To the traditional activity of curative conservation and binding, new ones have been added : prevention, preservation, awareness and education of staff, digitization, research... The laboratory allows a real scientific approach thanks to the development of material analysis methods, their conditions of aging and degradation. This task applies to heritage collections gathered on behalf of the Nation for centuries: &ldquo;French and foreign collections of prints, manuscripts, coins and medals, prints, photographs, maps, music, choreography, sound documents, audio-visual and computerized documents&rdquo;<sup class="ref">10</sup>. Over the last centuries an ever growing set of collections has been built whose growth is continuously accelerating ; today this set is estimated at over 30 million documents and hundreds of terabytes of digital data. <p>It is fascinating to see how some books survive centuries... In 44BC Cicero (a Roman orator) wrote a book for his son: <i>De Officiis</i> (“On Duties”) told him how to live a moral life, how to balance virtue with self-interest. The book refers to the views of various Greek philosophers of whom many works have been lost. <i>De Officiis</i> was read and studied throughout the rise of the Roman Empire and survived its fall. Cicero probably dictated <i>De Officiis</i> to a slave who copied it down on a papyrus scroll from which other copies were made in turn. The lush 15th century edition was printed in Mainz, Germany, on a printing press owned by Johann Fust (early partner of Johannes Gutenberg). Nowadays this beautiful volume can be found in the Huntington Library in San Marino, California, since 1916. Few physical volumes survive five centuries and this one should last several more. The incredible building from 1951 that protects it and tens of thousands of other volumes was originally meant to double as a nuclear-bomb shelter. Beautifully printed and condensing the knowledge and thoughts of many philosophers of a time from which not many traces were left behind, this book is a treasure and witness of a different age. Already important by Cicero’s time, it was a classic source of wisdom around the Renaissance. Its being preserved is like a physical conservation of the past.<p><!--
         --><p>Conversation is a practice that has been thought of for many years already. On another hand the conservation of posters remains more complicated. Posters are <span style="word-spacing: 0.06em;">ephemeral. More than books can be. They promote an</span></p></div><!--
      --><div class="notes"><!--
-        --><div class="note"><sup>10</sup> Cohen, Gérard. <i>La charte de la conservation en bibliothèque : une entreprise collective. Actualités de la conservation</i>, n°32, 2012, p. 3</div><!--
+        --><div class="note"><sup>10</sup>&nbsp;Cohen, Gérard. <i>La charte de la conservation en bibliothèque : une entreprise collective. Actualités de la conservation</i>, n°32, 2012, p. 3</div><!--
      --></div></div><!-- 
   --><div class="right"><!--style="background-image:url(images/designweb17.jpg);"--><div class="number"><a href="#hidden9">17 &rarr;</a></div><!--
      --><div class="texte"><p>event and once that event is over, the poster has no more appeal. Nevertheless, our societies tend to acknowledge more and more the artistic value of graphic design in all its forms. And the poster is, without any doubt, one of its most important historical embodimenst. For instance, the Chaumont Graphic Design Festival, in Chaumont (France), is now working on a big project: the CIG<sup class="ref">11</sup> (Centre International du Graphisme), opening its doors in May 2016, is meant to be a graphic design center where a collection of about 40,000 contemporary posters will be conserved, compiled since the festival’s inception, and enriched by about 2,000 pieces each year. Chaumont is probably not the only organisation that conserves graphic design (mostly printed matter) that way; in 2013, we could count around fifty different events around the world celebrating graphic design, and organising competitions (involving poster design and book design). Also, the Poster Museum at Wilanów is the oldest institution of that kind in the world. In 1953, around 500 posters that had survived the war were transferred from the Engravings Department of the National Museum in Warsaw to the Documentation Section, which just had been established. The Poster Museum was opened on the day of the inauguration of the 2nd International Poster Biennial (1968). Nowadays, the museum collection is made of about 36.000 Polish posters and nearly 25.000 foreign posters<sup class="ref">12</sup>. <p><!--
         --><p> If both Chaumont and Wilanów collect that many posters every year and so many books are still presented in bookfairs, the idea of &ldquo;Death of the book&rdquo; (and of printing) appears like a true mystery to me. </p></div><!--
         --><div class="notes"><!--
-        --><div class="note"><sup>11</sup> &ldquo;In France, graphic design is still poorly represented in the country’s cultural institutions, and is often confined to the fields of communication and advertising. [...] The CIG must therefore focus on being Europe’s first centre to present, explain and take part in graphic design.&rdquo; —No author, &ldquo;About&rdquo;, <a href="http://www.cig-chaumont.com/en/cig/page/about/-/presentation35/" target="_blank">http://www.cig-chaumont.com/en/cig/page/about/-/presentation35/</a>, consulted on September 21, 2015</div><!--
-        --><div class="note"><sup>12</sup> No Author, &ldquo;About The Museum: History. An outline&rdquo;,<br><a href="http://www.postermuseum.pl/en/about/" target="_blank">http://www.postermuseum.pl/en/about/</a>, consulted on February 18th, 2016</div><!--
+        --><div class="note"><sup>11</sup>&nbsp;&ldquo;In France, graphic design is still poorly represented in the country’s cultural institutions, and is often confined to the fields of communication and advertising. [...] The CIG must therefore focus on being Europe’s first centre to present, explain and take part in graphic design.&rdquo; —No author, &ldquo;About&rdquo;, <a href="http://www.cig-chaumont.com/en/cig/page/about/-/presentation35/" target="_blank">http://www.cig-chaumont.com/en/cig/page/about/-/presentation35/</a>, consulted on September 21, 2015</div><!--
+        --><div class="note"><sup>12</sup>&nbsp;No Author, &ldquo;About The Museum: History. An outline&rdquo;,<br><a href="http://www.postermuseum.pl/en/about/" target="_blank">http://www.postermuseum.pl/en/about/</a>, consulted on February 18th, 2016</div><!--
       --></div></div></div></div>
 
   <div class="page" id="hidden9"><div class="double"><!--
@@ -266,7 +275,7 @@ $(document).ready(normal);
         --><p>Indeed, we keep on hearing about the &ldquo;death of the book&rdquo;: in the early 1990s, the Book Review ran an essay, &ldquo;The End of Books&rdquo;, in which the novelist Robert Coover questioned whether print could survive the age of &ldquo;video transmissions, cellular phones, fax machines, computer networks, and in particular out in the humming digitalized precincts of avant-garde computer hackers, cyberpunks and hyperspace freaks.&rdquo; Now, progression planners have shifted from the hyperlink to the e-reader. In 2012, it has been calculated that the percentage of Americans who own e-reading devices doubled since December of the previous year. And in 2011, Amazon announced it was selling more e-books than print books.</p><!--
         --><p>However, in 1835, before any of these technologies, Théophile Gautier’s novel Mademoiselle de Maupin had already declared that &ldquo;the newspaper is killing the book, as the book killed architecture.&rdquo; But actually, we can see how one technology does not necessarily cancel another. Television did not kill radio any more than radio ended reading. The book’s epitath has been written and rewritten by every single generation.</p></div><!--
      --><div class="notes"><!--
-        --><div class="note"><sup>13</sup> No author, &ldquo;The Future of the Book&rdquo;,<br><a href="http://www.economist.com/news/essays/21623373-which-something-old-and-powerful-encountered-vault" target="_blank">http://www.economist.com/news/essays/21623373-which-something-old-and-powerful-encountered-vault</a>, consulted on October 15, 2015</div><!--
+        --><div class="note"><sup>13</sup>&nbsp;No author, &ldquo;The Future of the Book&rdquo;,<br><a href="http://www.economist.com/news/essays/21623373-which-something-old-and-powerful-encountered-vault" target="_blank">http://www.economist.com/news/essays/21623373-which-something-old-and-powerful-encountered-vault</a>, consulted on October 15, 2015</div><!--
      --></div></div></div></div>
 
   <div class="page" id="hidden10"><div class="double"><!--
@@ -278,7 +287,7 @@ $(document).ready(normal);
      --><p>This reminds me of what states Marshall McLuhan in <i>The Gutenberg Galaxy</i>. In this book, the author analyzes the effects of mass media, especially the printing press, on European culture and human consciousness, but one interesting aspect of this study is as follows: when television emerged, the immidiacy and roughness of the data that was given on this new medium actually pushed people to turn even more to newspapers and any printed information as they felt the need to verify the one given on screens.</p><!--
      --><p>The rise of digital technology —and especially Amazon, this never-before-seen bookshop— underlined these fears of the book coming to an end. In the past decade people predicted the death of books, of publishers, of authors and of bookshops, even of reading itself. Of all, only the bookshops have actually suffered serious damage. Ellie Hirschhorn, former chief digital officer at Simon&amp;Schuster admits: &ldquo;I thought everything was going to change so much more quickly and so much more radically&rdquo;. In 2010, she had predicted that half of all books sales would be e-books by 2013. A prediction still not accurate in 2015.</p></div><!--
      --><div class="notes"><!--
-        --><div class="note"><sup>14</sup> To this I can link the fictional language ‘Newspeak’ in 1984 by George Orwell (published in 1949), being a first step to that future. It is a controlled language created by the totalitarian state Oceania as a tool to limit freedom of thought, and concepts that pose a threat to the regime such as freedom, self-expression, individuality, and peace by using very short words and limited vocabulary.</div><!--
+        --><div class="note"><sup>14</sup>&nbsp;To this I can link the fictional language ‘Newspeak’ in 1984 by George Orwell (published in 1949), being a first step to that future. It is a controlled language created by the totalitarian state Oceania as a tool to limit freedom of thought, and concepts that pose a threat to the regime such as freedom, self-expression, individuality, and peace by using very short words and limited vocabulary.</div><!--
      --></div></div><!-- 
   --><div class="right"><div class="number"><a href="#hidden11">21 &rarr;</a></div><!--
      --><div class="texte"><!--
@@ -299,9 +308,9 @@ $(document).ready(normal);
      --><p>In parallel to the popularization of the home computer and its many new applications, the data storage technologies grew. These include the computer data storage which is the technology consisting of computer components and recording media used to save digital data but also the data storage devices, which through time have known, just like computers, an incredible evolution over the last decades. Indeed, as you can edit texts and images, you can then save them, which therefore gives you a larger possibility of sharing and keeping the very data you created.</p><!--
      --><p>Keeping, yes, but not necessarily forever. As a matter of fact, the evolution of data storage technologies has been such through the last years that the very first storage devices are nowadays completely useless. The floppy disk is a very good example. <span style="word-spacing: 0.04em;">A floppy disk is a type of disk storage in the form of a rectangular plastic carrier. To write and read data on a floppy disks you need a floppy disk drive. Floppy disks, initially (in 1971) as</span></p></div><!--
    --><div class="notes"><!--
-      --><div class="note"><sup>15</sup> of, relating to, or using data in the form of numerical digits: a digital image; digital devices./ available in electronic form; readable and manipulable by computer including the Internet. —No author, &ldquo;digital&rdquo;,<br><a href="http://dictionary.reference.com/browse/digital?s=t" target="_blank">http://dictionary.reference.com/browse/digital?s=t</a>, consulted on September 18, 2015.</div><!--
-      --><div class="note"><sup>16</sup> The abacus is a device for making arithmetic calculations, consisting of a frame set with rods on which balls or beads are moved.</div><!--
-      --><div class="note"><sup>17</sup> The Turing Machine is a hypothetical device with a set of logical rules of computation: the concept is used in mathematical studies of the computability of numbers and in the mathematical theories of automata and computers.</div><!--
+      --><div class="note"><sup>15</sup>&nbsp;of, relating to, or using data in the form of numerical digits: a digital image; digital devices./ available in electronic form; readable and manipulable by computer including the Internet. —No author, &ldquo;digital&rdquo;,<br><a href="http://dictionary.reference.com/browse/digital?s=t" target="_blank">http://dictionary.reference.com/browse/digital?s=t</a>, consulted on September 18, 2015.</div><!--
+      --><div class="note"><sup>16</sup>&nbsp;The abacus is a device for making arithmetic calculations, consisting of a frame set with rods on which balls or beads are moved.</div><!--
+      --><div class="note"><sup>17</sup>&nbsp;The Turing Machine is a hypothetical device with a set of logical rules of computation: the concept is used in mathematical studies of the computability of numbers and in the mathematical theories of automata and computers.</div><!--
    --></div></div></div></div>
 
 
@@ -314,14 +323,14 @@ $(document).ready(normal);
      --><p>As a reminder: the Internet is the global system of interconnected computer networks that use the Internet protocol suite to link billions of devices worldwide. It is a network that consists of millions networks (private, public, academic, business, and government). The Internet carries an extensive range of information resources and services, such as the inter-linked hypertext documents, electronic mail, telephony, and peer-to-peer networks for file sharing. In 20 years since 1995, Internet use has grown 100-times<sup class="ref">18</sup>.</p><!--
     --><p>Most traditional communications media are being reshaped or redefined by the Internet, giving birth to new services. Newspaper, book, and other print publishing are adapting to website technology, or are reshaped into blogging and web feeds.</p><!--
       --><div class="notes"><!--
-      --><div class="note"><sup>18</sup> No author, &ldquo;Internet&rdquo; <a href="http://en.wikipedia.org/wiki/Internet" target="_blank">http://en.wikipedia.org/wiki/Internet</a>, consulted on September 15, 2015.</div></div><!--
+      --><div class="note"><sup>18</sup>&nbsp;No author, &ldquo;Internet&rdquo; <a href="http://en.wikipedia.org/wiki/Internet" target="_blank">http://en.wikipedia.org/wiki/Internet</a>, consulted on September 15, 2015.</div></div><!--
    --></div></div><!--
   --><div class="right"><div class="number"><a href="#hidden13">25 &rarr;</a></div><!--
      --><div class="texte"><!--
      --><p>And together with the Internet is to be mentioned the Cloud computing. It is a kind of Internet-based computing, where shared resources, data and information are provided to computers and other devices on-demand. Cloud computing enables ubiquitous, convenient, on-demand network access to the different computing resources (networks, servers, storage, applications, and services) and can be rapidly provisioned and released with minimal management effort or service provider interaction. Cloud computing and storage solutions provide users with various capabilities to store and process their data in third-party data centers<sup class="ref">19</sup>.To sum-up, with the Cloud it is now possible to save data without having to update hardware anymore. The savings occur at the frequency the user decides and then, when connected to the Internet (by WiFi or wire), the data and information is being sent and saved in the Cloud.</p><!--
      --><p>With these new technologies, we are now given the possibility to produce a never-seen-before quantity of digital material and do not even need to have it on our personal hardware anymore. But, will this new kind of material stay forever?</p><!--
       --><div class="notes"><!--
-      --><div class="note"><sup>19</sup> Mell, P. and Grance, T. <i>The NIST Definition of Cloud Computing</i>, NIST U.S. Department of Commerce, Special Publication 800-145.</div></div><!--
+      --><div class="note"><sup>19</sup>&nbsp;Mell, P. and Grance, T. <i>The NIST Definition of Cloud Computing</i>, NIST U.S. Department of Commerce, Special Publication 800-145.</div></div><!--
    --></div></div></div></div>
 
 
@@ -358,8 +367,8 @@ $(document).ready(normal);
      --><p>Indeed, the expansion of information and content on the Internet could be considered as a new strategy of preservation... When put online, pdfs, BitTorrent<sup class="ref">21</sup> or any direct download see their chances to last in time might be increased because a larger number of copies can then be produced. This becomes some sort of a decentralization: the content is more likely to last longer since if you want to erase it, you must delete every single iteration of it. However, the copies might be preserved but it is almost impossible to keep track of them...</p><!--
      --><p>So, is the digital archiving technique really the ultimate solution to save the world’s written knowledge (and with that, my thesis)?</p></div><!--
    --><div class="notes"><!--
-      --><div class="note"><sup>20</sup> Goldsmith, K. “The Artful Accidents of Google Books”,<br><a href="http://www.newyorker.com/books/page-turner/the-artful-accidents-of-google-books" target="_blank">http://www.newyorker.com/books/page-turner/the-artful-accidents-of-google-books</a>, consulted on May 14, 2015.</div><!--
-      --><div class="note"><sup>21</sup> BitTorrent is a communication protocol for the practice of peer-to-peer file sharing that is used to distribute large amounts of data over the Internet</div><!--
+      --><div class="note"><sup>20</sup>&nbsp;Goldsmith, K. “The Artful Accidents of Google Books”,<br><a href="http://www.newyorker.com/books/page-turner/the-artful-accidents-of-google-books" target="_blank">http://www.newyorker.com/books/page-turner/the-artful-accidents-of-google-books</a>, consulted on May 14, 2015.</div><!--
+      --><div class="note"><sup>21</sup>&nbsp;BitTorrent is a communication protocol for the practice of peer-to-peer file sharing that is used to distribute large amounts of data over the Internet</div><!--
    --></div></div></div></div>
 
 
@@ -376,8 +385,8 @@ $(document).ready(normal);
      --><p> Data pollution represents the overload of data generated every second on and through high-tech items. When you think about the Google Books Library Project, it definitely appears to be generating a lot of unnecessary —as not amways usable— data... For instance, today self publishing has made a comeback. The internet enables people to sell their e-books (printed books too) without the hassle of trying to get bookstores to display them. Somehow, the Internet allowed us to free ourselves from &ldquo;publishers&rdquo; telling us what is worth publishing and what is not. Nowadays, each person using the Internet is able to produce, publish, post, share anything they want. Indeed, behind the screen self-censorship becomes scarcer. Even more, people tend to think (just like Bruce Schneier), that digital data is meant to last forever. But, seeing how fast it all evolves, and how floppy disks for instance, are now hardly useable, nothing tells us that data will &ldquo;stay around forever&rdquo;... Although, the immateriality of the data generated, stored somewhere in that abstract ungrabbable center somewhere in a desertic area, or in that even-less-reachable server called the Cloud, makes it hard for people to realise that new kind of pollution.</p><!--
      --><p> To try and avoid this, digital preservation goes through <span style="word-spacing: 0.05em;">the archival appraisal first step, the selection of all the</span></p></div><!--
    --><div class="notes"><!--
-      --><div class="note"><sup>22</sup> &ldquo;Bruce Schneier is an internationally renowned security technologist, called a 'security guru' by The Economist.&rdquo; Schneier, B. &ldquo;About me&rdquo;,<br><a href="http://www.schneier.com/blog/about/" target="_blank">http://www.schneier.com/blog/about/</a>, consulted on November 14, 2015</div><!--
-      --><div class="note"><sup>23</sup> Designer and member of the collective Open Source Publishing. Schrijver, E. &ldquo;Theses at the Royal Academy of Arts, The Hague&rdquo;,<br><a href="http://life-after-the-template.ericschrijver.nl/case-study-theses-at-the-royal-academy.html" target="_blank">http://life-after-the-template.ericschrijver.nl/case-study-theses-at-the-royal-academy.html</a>, consulted on December 4, 2015.</div><!--
+      --><div class="note"><sup>22</sup>&nbsp;&ldquo;Bruce Schneier is an internationally renowned security technologist, called a 'security guru' by The Economist.&rdquo; Schneier, B. &ldquo;About me&rdquo;,<br><a href="http://www.schneier.com/blog/about/" target="_blank">http://www.schneier.com/blog/about/</a>, consulted on November 14, 2015</div><!--
+      --><div class="note"><sup>23</sup>&nbsp;Designer and member of the collective Open Source Publishing. Schrijver, E. &ldquo;Theses at the Royal Academy of Arts, The Hague&rdquo;,<br><a href="http://life-after-the-template.ericschrijver.nl/case-study-theses-at-the-royal-academy.html" target="_blank">http://life-after-the-template.ericschrijver.nl/case-study-theses-at-the-royal-academy.html</a>, consulted on December 4, 2015.</div><!--
    --></div></div></div></div>
 
 
@@ -432,8 +441,8 @@ $(document).ready(normal);
      --><p>To refer to the domain of fashion again, there exists some kind of design that can hardly get out of trend: in fashion we would talk of &ldquo;intemporels&rdquo; (timeless items)...</p><!--
      --><p>Staying in the French graphic design landscape, uncommon are the designers (and designs) that are &ldquo;intemporels&rdquo;. <span style="word-spacing: 0.15em;">There are few examples such as Pierre</span></p></div><!--
    --><div class="notes"><!--
-      --><div class="note"><sup>24</sup> Kornblum, W. (2007) <i>Sociology in a Changing World</i>, Wadsworth Publishing.</div><!--
-      --><div class="note"><sup>25</sup> No author, Wiktionary: &ldquo;Revival&rdquo;,<br><a href="http://en.wiktionary.org/wiki/revival" target="_blank">http://en.wiktionary.org/wiki/revival</a>, consulted on December 4, 2015.</div><!--
+      --><div class="note"><sup>24</sup>&nbsp;Kornblum, W. (2007) <i>Sociology in a Changing World</i>, Wadsworth Publishing.</div><!--
+      --><div class="note"><sup>25</sup>&nbsp;No author, Wiktionary: &ldquo;Revival&rdquo;,<br><a href="http://en.wiktionary.org/wiki/revival" target="_blank">http://en.wiktionary.org/wiki/revival</a>, consulted on December 4, 2015.</div><!--
    --></div></div></div></div>
 
 
@@ -488,51 +497,50 @@ $(document).ready(normal);
         --><div class="references"><!--
         --><h2>REFERENCES</h2><!--
         --><h3>BOOKS</h3><!--
-        --><p>Rothenberg, J. and Clay, S. (2000). <i>A Book of the Book:<br>some works and projections about the book and writing</i>,<br>New-York.</p><!--
+        --><p>Rothenberg, J. and Clay, S. (2000). <i>A Book of the Book: some works and projections about the book and writing</i>, New-York.</p><!--
         --><p>De Bondt, S. and Muggeridge, F. (2009). <i>In The Form of the Book Book</i>, London: Occasional Papers.</p><!--
-        --><p>Koolhaas, R. and Otero-Pailos, J. (2014). <br><i>Preservation is overtaking us</i>, New-York: GSAPP Transcripts.</p><!--
-        --><p>Perrousseaux, Y. (2000). <i>Manuel de typographie<br>française élémentaire, 5ème édition</i>,<br>Lyon: Atelier Perrousseaux.</p><!--
+        --><p>Koolhaas, R. and Otero-Pailos, J. (2014). <i>Preservation is overtaking us</i>, New-York: GSAPP Transcripts.</p><!--
+        --><p>Perrousseaux, Y. (2000). <i>Manuel de typographie française élémentaire, 5ème édition</i>,Lyon: Atelier Perrousseaux.</p><!--
         --><p>Benjamin, W. (1936). <i>The Work of Art at the Age of Mechanical Reproduction</i>, Penguin Books.</p><!--
-        --><p>Gautier, T. (1835). <i>Mademoiselle de Maupin</i>, Paris:<br>Eugène Renduel.</p><!--
+        --><p>Gautier, T. (1835). <i>Mademoiselle de Maupin</i>, Paris: Eugène Renduel.</p><!--
         --><p>Mercier, L-S. (1781), <i>Tableau de Paris</i>, Neufchatel: Samuel Fauche.</p><!--
-        --><p>Chabanon, È., King, E., Exertier, N., E.B., Morlighem, S., Office ABC, Royer, É. &amp; Gourmel, Y. (2015). <i>Specimen</i>, Lyon:<br> Le Feu Sacré.</p><!--
-        --><p>McLuhan, M. (1962). <i>The Gutenberg Galaxy</i>,<br>University of Toronto Press.</p><!--
-        --><p>Bizzarri, T. (2014). <i>Pratiquer le livre</i>, Besançon: <br>Institut Supérieur des Beaux Arts.</p><!--
+        --><p>Chabanon, È., King, E., Exertier, N., E.B., Morlighem, S., Office ABC, Royer, É. &amp; Gourmel, Y. (2015). <i>Specimen</i>, Lyon: Le Feu Sacré.</p><!--
+        --><p>McLuhan, M. (1962). <i>The Gutenberg Galaxy</i>, University of Toronto Press.</p><!--
+        --><p>Bizzarri, T. (2014). <i>Pratiquer le livre</i>, Besançon: Institut Supérieur des Beaux Arts.</p><!--
         --><h3>INTERNET SOURCES</h3><!--
-        --><p>Pressman, J. “The Aesthetic of Bookishness in Twenty-Century Literature”, <a href="http://quod.lib.umich.edu/cgi/t/text/text-idx?cc=mqr;c=mqr;c=mqrarchive;idno=act2080.0048.402;rgn=main;view=text;xc=1;g=mqrg" target="_blank">"http://quod.lib.umich.edu/cgi/t/text/text-idx?cc=mqr;c=mqr;c=mqrarchive;idno=act2080.0048.402;rgn=main;view=text<br>;xc=1;g=mqrg"</a>,consulted on May 22, 2015.</p><!--
-        --><p>Coover, R. “The End of Books”,<br><a href="http://www.nytimes.com/books/98/09/27/specials/coover-end.html" target="_blank">http://www.nytimes.com/books/98/09/27/specials/coover-end.html</a>, consulted on May 23, 2015.</p><!--
-        --><p>Oakes, G. “DATA POLLUTION”,<br><a href="http://www.grahamoakes.co.uk/downloads/Expert_View_EAI_May_09.pdf" target="_blank">http://www.grahamoakes.co.uk/downloads/Expert_View_EAI_May_09.pdf</a>, consulted on May 23, 2015.</p><!--
-        --><p>Glanz, J. “Power, Pollution and the Internet”,<br><a href="http://www.nytimes.com/2012/09/23/technology/data-centers-waste-vast-amounts-of-energy-belying-industry-image.html?pagewanted=all" target="_blank">http://www.nytimes.com/2012/09/23/technology/data-centers-waste-vast-amounts-of-energy-belying-industry-image.html?pagewanted=all</a>, consulted on September 5, 2015.</p><!--
-        --><p>Lénart, M. “Conservation du Patrimoine : Les difficultés d’une approche économique”,<br><a href="http://bbf.enssib.fr/consulter/bbf-1990-02-0104-004" target="_blank">http://bbf.enssib.fr/consulter/bbf-1990-02-0104-004</a>, consulted on September 5, 2015.</p><!--
-        --><p>No author, “The University of Chicago Library, Under Covers: The Art and Science of Book Conservation”,<br><a href="http://www.lib.uchicago.edu/e/webexhibits/scienceofconservation/photoreproduction.html" target="_blank">http://www.lib.uchicago.edu/e/webexhibits/scienceofconservation/photo<br>reproduction.html</a>, consulted on September 5, 2015.</p><!--
-        --><p>Price, L. “Dead Again”,<br><a href="http://www.nytimes.com/<br>2012/08/12/books/review/the-death-of-the-book-through-the-ages.html?_r=0" target="_blank">http://www.nytimes.com/2012/08/12/books/review/the-death-of-the-book-through-the-ages.html?_r=0</a>,<br>consulted on September 5, 2015.</p><!--
+        --><p>Pressman, J. “The Aesthetic of Bookishness in Twenty-Century Literature”, <a href="http://quod.lib.umich.edu/cgi/t/text/text-idx?cc=mqr;c=mqr;c=mqrarchive;idno=act2080.0048.402;rgn=main;view=text;xc=1;g=mqrg" target="_blank">"http://quod.lib.umich.edu/&shy;cgi/t/text/text-idx?&shy;cc=mqr;&shy;c=mqr;&shy;c=mqrarchive;&shy;idno=act2080.0048.402;&shy;rgn=main;&shy;view=text;&shy;xc=1;&shy;g=mqrg"</a>, consulted on May 22, 2015.</p><!--
+        --><p>Coover, R. “The End of Books”, <a href="http://www.nytimes.com/books/98/09/27/specials/coover-end.html" target="_blank">http://www.nytimes.com/&shy;books/98/09/27/&shy;specials/&shy;coover-end.html</a>, consulted on May 23, 2015.</p><!--
+        --><p>Oakes, G. “DATA POLLUTION”, <a href="http://www.grahamoakes.co.uk/downloads/Expert_View_EAI_May_09.pdf" target="_blank">http://www.grahamoakes.co.uk/&shy;downloads/&shy;Expert_View_EAI_May_09.pdf</a>, consulted on May 23, 2015.</p><!--
+        --><p>Glanz, J. “Power, Pollution and the Internet”, <a href="http://www.nytimes.com/2012/09/23/technology/data-centers-waste-vast-amounts-of-energy-belying-industry-image.html?pagewanted=all" target="_blank">http://www.nytimes.com/&shy;2012/09/23/&shy;technology/&shy;data&hyphen;centers&hyphen;waste&hyphen;vast&hyphen;amounts&hyphen;of&hyphen;energy&hyphen;belying&hyphen;industry&hyphen;image.html?&shy;pagewanted=all</a>, consulted on September 5, 2015.</p><!--
+        --><p>Lénart, M. “Conservation du Patrimoine : Les difficultés d’une approche économique”, <a href="http://bbf.enssib.fr/consulter/bbf-1990-02-0104-004" target="_blank">http://bbf.enssib.fr/&shy;consulter/&shy;bbf-1990-02-0104-004</a>, consulted on September 5, 2015.</p><!--
+        --><p>No author, “The University of Chicago Library, Under Covers: The Art and Science of Book Conservation”, <a href="http://www.lib.uchicago.edu/e/webexhibits/scienceofconservation/photoreproduction.html" target="_blank">http://www.lib.uchicago.edu/&shy;e/webexhibits/&shy;scienceofconservation/&shy;photo&shy;reproduction.html</a>, consulted on September 5, 2015.</p><!--
+        --><p>Price, L. “Dead Again”, <a href="http://www.nytimes.com/<br>2012/08/12/books/review/the-death-of-the-book-through-the-ages.html?_r=0" target="_blank">http://www.nytimes.com/&shy;2012/08/12/&shy;books/&shy;review/&shy;the&hyphen;death&hyphen;of&hyphen;the&hyphen;book&hyphen;through&hyphen;the&hyphen;ages.html?&shy;_r=0</a>, consulted on September 5, 2015.</p><!--
      --></div></div><!-- 
+
   --><!--div class="right" style="background-image:url(images/designweb49.jpg);"><div class="number">49</div--><!--
   --><div class="right"><div class="number"><a href="#hidden25">49 &rarr;</a></div><!--
         --><div class="references"><!--
-           --><br><!--
-           --><br><!--
-           --><p>No author, “The Future of the Book”,<br><a href="http://www.economist.com/news/essays/21623373-which-something-old-and-powerful-encountered-vault" target="_blank">http://www.economist.com/news/essays/21623373-which-something-old-and-powerful-encountered-vault</a>,<br>consulted on October 15, 2015<p><!--
-           --><p>No author, “The Library of Congress, Digital Collection”,<br><a href="http://www.loc.gov/library/libarch-digital.html" target="_blank">http://www.loc.gov/library/libarch-digital.html</a>,<br>consulted on November 18, 2015.</p><!--
+           --><p>No author, “The Future of the Book”, <a href="http://www.economist.com/news/essays/21623373-which-something-old-and-powerful-encountered-vault" target="_blank">http://www.economist.com/&shy;news/&shy;essays/&shy;21623373&hyphen;which&hyphen;something&hyphen;old&hyphen;and&hyphen;powerful&hyphen;encountered&hyphen;vault</a>, consulted on October 15, 2015<p><!--
+           --><p>No author, “The Library of Congress, Digital Collection”, <a href="http://www.loc.gov/library/libarch-digital.html" target="_blank">http://www.loc.gov/&shy;library/&shy;libarch&hyphen;digital.html</a>, consulted on November 18, 2015.</p><!--
            --><h3>VIDEO</h3><!--
-           --><p>Book, Leerestademoda, 2010<br><a href="http://www.popularlibros.com/materias/leerestademoda.com-conoces-el-BOOK/540/" target="_blank">http://www.popularlibros.com/materias/leerestademoda.com-conoces-el-BOOK/540/</a>,consulted on May 23, 2015</p><!--
-           --><p>A Brief Histoy of Data, 2011<br><a href="https://www.youtube.com/watch?v=ah14LEFKe8Q" target="_blank">https://www.youtube.com/watch?v=ah14LEFKe8Q</a>,<br>consulted on November 19, 2015<p><!--
+           --><p>Book, Leerestademoda, 2010, <a href="http://www.popularlibros.com/materias/leerestademoda.com-conoces-el-BOOK/540/" target="_blank">http://www.popularlibros.com/&shy;materias/&shy;leerestademoda.com&hyphen;conoces&hyphen;el&hyphen;BOOK/540/</a>, consulted on May 23, 2015</p><!--
+           --><p>A Brief Histoy of Data, 2011, <a href="https://www.youtube.com/watch?v=ah14LEFKe8Q" target="_blank">https://www.youtube.com/watch?v=ah14LEFKe8Q</a>, consulted on November 19, 2015<p><!--
            --><h3>EXHIBITION</h3><!--
            --><p>Tania Mouraud, <i>AD NAUSEAM</i>, Centre Pompidou Metz (France), March 4, October 5, 2015</p><!--
            --><h3>IMAGES</h3><!--
-           --><p>p.4 Hofland, B. (1822). <i>Tales of the Manor</i>, University of Columbia<br>In: Dans les livres scannés par Google, la trace de ses travailleurs invisibles,<br><a href="http://rue89.nouvelobs.com/rue89-culture/2014/11/13/les-livres-scannes-google-trace-travailleurs-invisibles-256021" target="_blank">http://rue89.nouvelobs.com/rue89-culture/2014/11/13/les-livres-scannes-google-trace-travailleurs-invisibles-256021</a></p><!--
+           --><p>p.4 Hofland, B. (1822). <i>Tales of the Manor</i>, University of Columbia. In: Dans les livres scannés par Google, la trace de ses travailleurs invisibles, <a href="http://rue89.nouvelobs.com/rue89-culture/2014/11/13/les-livres-scannes-google-trace-travailleurs-invisibles-256021" target="_blank">http://rue89.nouvelobs.com/&shy;rue89-culture/&shy;2014/11/13/&shy;les-livres-scannes&hyphen;google&hyphen;trace-travailleurs-invisibles&hyphen;256021</a></p><!--
            --><p>p.6  Picture from personal footage.</p><!--
-           --><p>p.14 Gutenberg, J. (1455). <i>Bible</i>, Mainz. In: Highlights from Bridwell Library Special Collections: Bibles,<br><a href="http://www.smu.edu/Bridwell/SpecialCollectionsandArchives/" target="_blank">http://www.smu.edu/Bridwell/SpecialCollectionsandArchives/</a><br>Exhibitions/BibleHighlights/Gutenberg</p><!--
-           --><p>p.18 Gautier, T. (1834). <i>Mademoiselle de Maupin</i>, Paris.<br>In: Google Livre, Mademoiselle de Maupin (Complete)<br><a href="http://books.google.fr/" target="_blank">http://books.google.fr/</a></p><!--
-           --><p>p.26 Guedson, P. (1867), <i>A French Examination hand-book</i>. <br>In: Google Livre, A French Examination hand-book<br><a href="http://books.google.fr/" target="_blank">http://books.google.fr/</a>/</p><!--
-           --><p>p.30 Schedel, H. (1493), <i>Schedelsche Weltchronik</i>. In: Wikimedia Commons, File:Schedelsche Weltchronik d 272.jpg.<br><a href="http://commons.wikimedia.org/wiki/File:Schedelsche_Weltchronik_d_272.jpg" target="_blank">http://commons.wikimedia.org/wiki/File:Schedelsche_<br>Wel</a></p><!--
-           --><p>p.38 Chabanon, È., King, E., Exertier, N., E.B., Morlighem, S., Office ABC, Royer, É. &amp; Gourmel, Y. (2015). <i>Specimen</i>, Lyon:<br> Le Feu Sacré. In: Thomas Bizzarri &amp; Alain Rodriguez<br><a href="http://www.bizzarri-rodriguez.com/" target="_blank">http://www.bizzarri-rodriguez.com/</a></p><!--
+           --><p>p.14 Gutenberg, J. (1455). <i>Bible</i>, Mainz. In: Highlights from Bridwell Library Special Collections: Bibles, <a href="http://www.smu.edu/Bridwell/SpecialCollectionsandArchives/" target="_blank">http://www.smu.edu/&shy;Bridwell/&shy;SpecialCollectionsandArchives/</a> Exhibitions/BibleHighlights/Gutenberg</p><!--
+           --><p>p.18 Gautier, T. (1834). <i>Mademoiselle de Maupin</i>, Paris. In: Google Livre, Mademoiselle de Maupin (Complete), <a href="http://books.google.fr/" target="_blank">http://books.google.fr/</a></p><!--
+           --><p>p.26 Guedson, P. (1867), <i>A French Examination hand-book</i>. In: Google Livre, A French Examination hand-book, <a href="http://books.google.fr/" target="_blank">http://books.google.fr/</a>/</p><!--
+           --><p>p.30 Schedel, H. (1493), <i>Schedelsche Weltchronik</i>. In: Wikimedia Commons, File:Schedelsche Weltchronik d 272.jpg. <a href="http://commons.wikimedia.org/wiki/File:Schedelsche_Weltchronik_d_272.jpg" target="_blank">http://commons.wikimedia.org/&shy;wiki/&shy;File:Schedelsche_Wel</a></p><!--
+           --><p>p.38 Chabanon, È., King, E., Exertier, N., E.B., Morlighem, S., Office ABC, Royer, É. &amp; Gourmel, Y. (2015). <i>Specimen</i>, Lyon:  Le Feu Sacré. In: Thomas Bizzarri &amp; Alain Rodriguez, <a href="http://www.bizzarri-rodriguez.com/" target="_blank">http://www.bizzarri-rodriguez.com/</a></p><!--
            --><p>p.42 Picture from personal footage.<br> Detail from (N)EVERLASTING the experiment<br>© 2015, The Royal Academy of Art, The Hague</p><!--
            --><p>p.45 Burke, J.W. (1909). <i>Macon Cook Book</i>. <br>Wesleyan College Alumnae, Macon, Georgia.<br>In: <a href="http://theartofgooglebooks.tumblr.com/page/2" target="_blank">http://theartofgooglebooks.tumblr.com/page/2</a></p><!--
            --><p>p.47 Picture from <i>Back to the Future</i> (1985),<br>directed by Robert Zemeckis</p></div></div></div></div><!--
 
   --><div class="page" id="hidden25"><div class="double"><!--
-  --><!--div class="left" style="background-image:url(images/designweb50.jpg);"--><!--<div class="number">50</div>
+  --><!--div class="left" style="background-image:url(images/designweb50.jpg);"><div class="number"></div--><!--
   --><div class="left"><div class="number"><a href="#hidden24">&larr;</a> <a href="#hidden26">&rarr;</a></div><!--
      --><!--div class="texte"--><!--
      --><div class="colophon"><!--
@@ -542,33 +550,25 @@ $(document).ready(normal);
            --><dd>Zineb Benassarou — www.znbbnssr.fr</d><!--
            --><dd>under supervision of</dd><!-- 
            --><dd>Marjan Brandsma and Dirk Vis.</dd><!--
-        --><br><!--
         --><dt>EDITION</dt><!--
            --><dd>Book: 5 copies &amp; yours</dd><!--
            --><dd>Website: <a href="http://kabk.github.io/govt-theses-16/" target="_blank">http://kabk.github.io/govt-theses-16/</a></dd><!--
-        --><br><!--
         --><dt>PRINT</dt><!--
            --><dd>Your printer</dd><!--
-        --><br><!--
         --><dt>FONTS</dt><!--
            --><dd>Times Regular &amp; Bold</dd><!--
            --><dd>Arial Bold</dd><!--
-        --><br><!--        
         --><dt>PAPER</dt><!--
            --><dd>Your paper</dd><!--
-        --><br><!--
         --><dt>Many thanks to</dt><!--
            --><dd>Dirk Vis,</dd><!--
            --><dd>Marjan Brandsma,<!-- 
            --><dd>Eric Schrijver,<!-- 
            --><dd>Étienne Hervy,<!-- 
            --><dd>for the good advice.<!-- 
-        --><br><!--
-        --><br><!--
         --><dt>Special thanks to<dt><!--
            --><dd>my family and my friends,</dd><!-- 
            --><dd>for their everlasting support.</dd><!--
-        --><br><!--
         --><dt>Disclaimer</dt><!--
            --><dd>You are strongly invited to copy and share</dd><!-- 
            --><dd>this book as many time as you wish with</dd><!-- 
