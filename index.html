@@ -38,7 +38,7 @@
 <body>
 
   <script>
-var SELECTOR = "#cover a, .texte a, .bottom a, .number a, .navbar a";
+var SELECTOR = "#cover a, .texte a, .bottom a, .number a, .navbar a, .backcover a";
 function normal () {
   // Add smooth scrolling to all links
   $(SELECTOR).click(function (e) {
@@ -121,7 +121,7 @@ $(document).ready(normal);
 
 
 <div id="book">  
-  <div class="page"><div class="single"><!--
+  <div class="page" id="hidden0"><div class="single"><!--
   --><img src="images/designweb.jpg"><!--
   --><div id="cover"><a href="#hidden1">(N)EVERLASTING</a></div></div></div><!--
 
@@ -583,7 +583,7 @@ $(document).ready(normal);
 
   <div class="page" id="hidden26"><div class="single"><!--
   --><img src="images/designweb52.jpg"><!--
-  --><div class="backcover">UNLIMITED EDITION</div></div></div>
+  --><div class="backcover"><a href="#hidden0">UNLIMITED EDITION</a></div></div></div>
 
 </div>
 
